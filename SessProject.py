@@ -12,6 +12,7 @@ def logIn(driver):
         user_pass.append(file.readline())
         user_pass.append(file.readline())
     driver.get(sess)
+    sleep(0.5)
     driver.find_element(By.NAME, "edId").send_keys(user_pass[0])
     driver.find_element(By.ID, "edPass").send_keys(user_pass[1])
     sleep(0.5)
@@ -32,7 +33,7 @@ def ScrapeUnits(driver, fields, Departments):
     for Dep in Departments:
         dep_units = []
         Select(driver.find_element(By.ID, 'edSemester')
-            ).select_by_visible_text('دوم - 1401')
+            ).select_by_visible_text('دوم - 1402')
         Select(driver.find_element(By.ID, 'edDepartment')
             ).select_by_visible_text(Dep)
         driver.find_element(By.ID, 'edDisplay').click()
