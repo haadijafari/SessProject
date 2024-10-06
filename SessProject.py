@@ -22,6 +22,7 @@ def logIn(driver):
     print(driver.find_elements(By.XPATH, "//*[@id=\'ParentForm\']/div[4]/section/div[2]/section/div/div[2]/div/div/div/div[3]"))
     driver.find_elements(By.XPATH, "//*[@id=\'ParentForm\']/div[4]/section/div[2]/section/div/div[2]/div/div/div/div[3]")[0].click()
 
+
 def SemesterUnitListsPage(driver):
     # آموزشی
     sleep(1)
@@ -29,6 +30,7 @@ def SemesterUnitListsPage(driver):
     sleep(1)
     # لیست دروس نیمسال
     driver.find_elements(By.TAG_NAME, 'li')[28].click()
+
 
 def ScrapeUnits(driver, fields, Departments):
     for Dep in Departments:
@@ -51,10 +53,8 @@ def ScrapeUnits(driver, fields, Departments):
             doros = driver.find_elements(By.XPATH, "//td[@align=\'center\']")
 
         CSVWriter(fields,dep_units,Dep)
-            
-        
-        
-            
+
+
 def CSVWriter(fields, data, Dep):
     for i in data:
         with open('%s.csv' % Dep, 'w', encoding="utf-8-sig") as f:
