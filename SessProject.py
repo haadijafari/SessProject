@@ -19,7 +19,8 @@ def logIn(driver):
     display = driver.find_element(By.ID, "edEnter")
     display.click()
     # [0] = Unit select | [1] = Other Actions | [2] = Exams | [3] = Sign up allowed check
-    driver.find_elements(By.TAG_NAME, "h6")[1].click()
+    print(driver.find_elements(By.XPATH, "//*[@id=\'ParentForm\']/div[4]/section/div[2]/section/div/div[2]/div/div/div/div[3]"))
+    driver.find_elements(By.XPATH, "//*[@id=\'ParentForm\']/div[4]/section/div[2]/section/div/div[2]/div/div/div/div[3]")[0].click()
 
 def SemesterUnitListsPage(driver):
     # آموزشی
@@ -33,7 +34,7 @@ def ScrapeUnits(driver, fields, Departments):
     for Dep in Departments:
         dep_units = []
         Select(driver.find_element(By.ID, 'edSemester')
-            ).select_by_visible_text('دوم - 1402')
+            ).select_by_visible_text('اول - 1403')
         Select(driver.find_element(By.ID, 'edDepartment')
             ).select_by_visible_text(Dep)
         driver.find_element(By.ID, 'edDisplay').click()
