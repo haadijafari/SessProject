@@ -36,7 +36,7 @@ def ScrapeUnits(driver, fields, Departments):
     for Dep in Departments:
         dep_units = []
         Select(driver.find_element(By.ID, 'edSemester')
-            ).select_by_visible_text('اول - 1403')
+            ).select_by_visible_text('دوم - 1403')
         Select(driver.find_element(By.ID, 'edDepartment')
             ).select_by_visible_text(Dep)
         driver.find_element(By.ID, 'edDisplay').click()

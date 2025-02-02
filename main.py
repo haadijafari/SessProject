@@ -5,7 +5,7 @@ if __name__ == '__main__':
     driver = webdriver.Chrome()
     #driver.set_window_position(-10000, 0)
 
-    Departments = ['بخش علوم كامپيوتر', 'بخش رياضي كاربردي', 'بخش معارف اسلامي']
+    Departments = ['بخش علوم كامپيوتر', 'بخش علوم ورزشي']
     fields = ['Unit name',
                 'Unit count',
                 'Unit code',
